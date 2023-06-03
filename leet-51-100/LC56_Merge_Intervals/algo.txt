@@ -1,0 +1,2 @@
+Sort by start of interval in case ranges are not in order. Now after checking the edge cases, create a new array and put the first array from intervals into it.
+In the for loop examine destructured elements of each array inside intervals array. Take the end of the last array in newly created newIntervals array and compare whether its end is bigger than start of current array in intervals. If yes, then check wich end is bigger and assign it to end if last array in newResults.
