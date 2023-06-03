@@ -1,0 +1,1 @@
+Push newInterval into intervals and sort the intervals by arrays start number. Then use algo from LC56 to merge the rest.
