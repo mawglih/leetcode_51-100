@@ -1,0 +1,4 @@
+Step 1 generate 2 dimensional array filled with O (or any letters) size n by n.
+Step 2 declare 4 pointers - left, right, top, bottom.
+Step 3 set up while loop so left is less or equal right and top is less or equal bottom, also set up a counter variable at 1 and put condition that it should be less or equal n * n;
+Step 4 create 4 for loops to move to right -> bottom -> left -> top. Every time at the end of the loop change a pointer (increase or decrease.) Use counter variable within for loops to set current value of array at matrix[x][y] equal to counter. Increase counter in every iteration of for loop.
