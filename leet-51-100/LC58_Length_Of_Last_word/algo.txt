@@ -1,0 +1,1 @@
+Trim the end of the line in case there is a trailing space. Convert to array by splitting on spaces. Measure the last array member legth and return its length.
