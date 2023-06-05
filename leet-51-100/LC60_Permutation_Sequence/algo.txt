@@ -1,0 +1,3 @@
+First create array of factorials, then create range of numbers (also array) upto n.
+Declare empty string as a result before starting for loop. Start the loop from n, calculate index of first number in range array. Add number from rnage at index - 1 to res. Remove it from range array at next step.
+Eventually range is empty and res is the answer.
