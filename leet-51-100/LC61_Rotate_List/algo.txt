@@ -1,0 +1,2 @@
+Create a new list. Set a counter variable at 0. Go over list increasing counter. so by the ens counter equal list end. In case ratation is bigger than list, perform modulos operation. Now list needs to be broken at k.
+Now move list to k position. Create another helper and move it to k position while moving other list to the end. Now last node points to head and next node of helper becomes new head, and helper next becomes null.
