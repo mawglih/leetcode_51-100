@@ -1,0 +1,1 @@
+This is claassical combinatory task, first create a function to calculate factorial. Then use it in formula Cr(t,r) = t! / (r! * (t - r)!), where t total number of turns n - 1 + m - 1, and r is m - 1 (or n - 1).
