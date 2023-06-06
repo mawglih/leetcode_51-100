@@ -18,7 +18,6 @@ var uniquePathsWithObstacles = function(grid) {
         for (let j = 1; j <= n; j++) {
             if (grid[i-1][j-1]) continue;
             dp[i][j] = dp[i-1][j] + dp[i][j-1];
-
         }
     }
     return dp[m][n];

@@ -1,0 +1,5 @@
+Find grid size n and m. 
+Calculate the distance travelled within the first column. This is because each square depends on the square above and square to the left. !st column has nothing to the left, add square above it. Then do the same with first row - it has nothing above it.
+Start the third for loop with precompjuted 1st row and 1st column.
+The distance to the point at i,j is equal to itself plus the minimum of the two spaces (either one above, or one to the left - use Math.min to get the smaller one.)
+Finally return distance that will be in the right bottom cell: grid[n-1][m-1]
