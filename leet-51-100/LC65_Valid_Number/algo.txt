@@ -1,0 +1,6 @@
+/^(\+|-)? Checks the beginning of the string, this part is optional because of the '?' at the end
+allows the string to begin with a '+' or a '-'
+(\d+\.|\d+\.\d+|\.\d+|\d+) This part must be included in the string | - this is an or operator in regex separating different expressions \d+\. checks for one or more digits followed by a '.' \d+\.\d+ checks for one or more digits followed by a '.' followed by one or more digits \.\d+ checks for '.' followed by one or more digits \d+ just checks for one or more digits
+((e|E)(\+|-)?\d+)?$/ this part matches with the end of the string and is entirely optional because of the '?' is at the end of the expression wrapped in brackets (e|E) there must be an 'e' or an 'E'
+(\+|-)? optional '+' or '-' following the 'e' or 'E'
+\d+ there must be one or more digits
