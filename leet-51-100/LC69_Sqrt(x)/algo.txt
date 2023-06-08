@@ -1,0 +1,1 @@
+Edge cases - sqrt of 1 and 0 are equal to itself. In all other cases find when i multiplied by i is greater than x, return i - 1 (previous)
