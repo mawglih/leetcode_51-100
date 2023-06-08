@@ -1,0 +1,2 @@
+Start from first word. Assign it to line. Now check if the length of the word is smaller that maxwidth. Create variable to hold length difference. Starting from index 1, loop thri words array to find when spaceLeft with be exceeded. When id does - line is finished - push it to justifying function and then to the output array.
+For the last line add spaces since no more lines follow.
