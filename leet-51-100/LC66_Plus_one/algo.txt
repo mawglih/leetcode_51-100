@@ -1,0 +1,1 @@
+The only problem is when adding 1 makes digit 10, In that case we need to leave as digits[i] only remainder, and move 1 to the next array member. If you ae already at digits[0], then add 1 to the beginning of array.
