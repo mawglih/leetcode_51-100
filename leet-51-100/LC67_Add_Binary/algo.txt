@@ -1,0 +1,3 @@
+Here we can use 2 helpere functions. Both will operate on arrays, so 1st step - convert both strings to arrays.
+1st function will eliminate length difference in arrays, by padding 0 to the front of the smaller array.
+2nd function will add arrays' members in the loop from end to the beginning of arrays, also keeping in mind that if there is '1' left when index reaches 0, it should be added to the beginning of new array. Then simple conversion to the string and we avoid precision problems with integer in JS.
