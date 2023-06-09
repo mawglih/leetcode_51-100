@@ -1,0 +1,1 @@
+After closer look - the behaviour of step count is equal to fibonacci function. One of the ways - is to create array and then add numbers in for loop arr[i] = arr[i - 1] + arr[i - 2].
