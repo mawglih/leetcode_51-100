@@ -1,0 +1,2 @@
+Create two-dimensional matrix, fill it with zeros. Matrix size is (n + 1) * (m + 1) where n is length of word 1 and m length of word 2. Now file row with indices of of charatcters of word1 and 1st column withh indices of charachters of word2. In double for loop iterate over each charachter of each word. If they are the same then repeat the number of actions from upper left diagonal, if not, then calculate min from upper cell, diagonal from left and left cell.
+Return the number that is saved in the last cell on the right. 

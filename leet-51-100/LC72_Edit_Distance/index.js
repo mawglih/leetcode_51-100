@@ -30,20 +30,19 @@ exection -> execution (insert 'u')
  * @return {number}
  */
 var minDistance = function(word1, word2) {
-  let count = 0;
-  for(let i = 0; i < word1.length; i++) {
-    if(!word2.includes(word1[i])) {
-      console.log('char1', word1[i]);
-      count++;
-  }
-}
-  for(let i = 0; i < word2.length; i++) {
-    if (!word1.includes(word2[i])) {
-      count++;
-      console.log('char2', word2[i]);
+    const matrix = new Array(word1.length + 1).fill(0).map(row => new Array(word2.length + 1).fill(0));
+    for(let i = 0; i <= word1.length; i++) {
+        for(let j = 0; j <= word2.length; j++) {
+            if(i == 0) matrix[0][j] = j;
+            else if(j == 0) matrix[i][0] = i;
+            else if(word1[i - 1] === word2[j - 1]) matrix[i][j] = matrix[i - 1][j - 1];
+            else matrix[i][j] = Math.min(matrix[i][j - 1], matrix[i - 1][j - 1], matrix[i - 1][j]) + 1;
+        }
     }
-  }
-  return count;
+    return matrix[word1.length][word2.length];
 };
 
-console.log(minDistance('pose', 'rose'));
+console.log(minDistance('hrepose', 'rose'));
+
+// runtime 86 ms
+// memory 47.5 MB
