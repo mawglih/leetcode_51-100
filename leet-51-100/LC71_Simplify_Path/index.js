@@ -15,5 +15,19 @@ Return the simplified canonical path.
  * @return {string}
  */
 var simplifyPath = function(path) {
-    
+    let arr = path.split('');
+    newArr = [];
+    arr = arr.filter(char => char !== '.');
+    if(arr.at(-1) === '/') arr = arr.pop();
+    for(let i = 0; i < arr.length; i++) {
+      if(arr[i] === '/' && arr[i + 1] === '/') {
+        continue;
+      } else {
+        newArr.push(arr[i]);
+      }
+    }
+    return newArr.join('');
 };
+
+const str = '//../home/user/1'
+console.log(simplifyPath(str));

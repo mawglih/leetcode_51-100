@@ -30,5 +30,20 @@ exection -> execution (insert 'u')
  * @return {number}
  */
 var minDistance = function(word1, word2) {
-    
+  let count = 0;
+  for(let i = 0; i < word1.length; i++) {
+    if(!word2.includes(word1[i])) {
+      console.log('char1', word1[i]);
+      count++;
+  }
+}
+  for(let i = 0; i < word2.length; i++) {
+    if (!word1.includes(word2[i])) {
+      count++;
+      console.log('char2', word2[i]);
+    }
+  }
+  return count;
 };
+
+console.log(minDistance('pose', 'rose'));
