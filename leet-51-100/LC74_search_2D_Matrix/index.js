@@ -20,5 +20,16 @@ Output: false
  * @return {boolean}
  */
 var searchMatrix = function(matrix, target) {
-    
+    for(let i = 0; i < matrix.length; i++) {
+        if(matrix[i].at(-1) < target && i != matrix.length - 1) continue;
+        else return matrix[i].includes(target);
+    }
 };
+
+const a = [[1]];
+const b = 17;
+
+console.log(searchMatrix(a, b));
+
+// runtime 65 ms
+// memory 41.6 MB

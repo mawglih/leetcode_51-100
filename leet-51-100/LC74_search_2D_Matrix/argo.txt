@@ -1,0 +1,1 @@
+In order to skip unneeded rows, first find the row where the last member is greter than target. If such rpw found, check if it includes the target and return it.
