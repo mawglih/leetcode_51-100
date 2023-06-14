@@ -19,5 +19,28 @@ Output: [0,1,2]
  * @return {void} Do not return anything, modify nums in-place instead.
  */
 var sortColors = function(nums) {
-    
+    let p1 = 0;
+    let p2 = nums.length - 1;
+    let curr = 0;
+    let tmp = 0;
+    while(curr <= p2) {
+        if(nums[curr] === 0) {
+            tmp = nums[p1];
+            nums[p1++] = nums[curr];
+            nums[curr++] = tmp;
+        } else if(nums[curr] === 2) {
+            tmp = nums[curr];
+            nums[curr] = nums[p2];
+            nums[p2--] = tmp
+        } else {
+            curr++;
+        };
+    }
+    return nums;
 };
+
+console.log(sortColors([2,0,2,1,1,0]));
+
+
+// runtime 68 ms
+// memory 41.6 MB

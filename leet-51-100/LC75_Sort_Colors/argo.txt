@@ -1,0 +1,2 @@
+The idea is to change array in place. There fore a tmp variable is needed to store value while changing member values. The loop goea from 0 index to end and checks if 1 of three conditions is met. If member equal 0, it moves it into the beginning of array, if it is equal 2 - to the end.
+If it is equal 1, it just moves to next one.
