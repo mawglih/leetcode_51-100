@@ -13,5 +13,24 @@ Output: [[0,0,0,0],[0,4,5,0],[0,3,1,0]]
  * @return {void} Do not return anything, modify matrix in-place instead.
  */
 var setZeroes = function(matrix) {
-    
+    let indices = [];
+    for(let i = 0; i < matrix.length; i++) {
+        for(let j = 0; j < matrix[i].length; j++) {
+            if(matrix[i][j] === 0) indices.push([i, j]);
+        }
+    }
+    for(let i = 0; i < indices.length; i++) {
+        let [r, c] = indices[i];
+        matrix[r].fill(0);
+        for(let n = 0; n < matrix.length; n++) {
+            matrix[n][c] = 0;
+        }
+    }
+    return matrix;
 };
+
+const m = [[1,1,1],[1,0,1],[1,1,1]];
+console.log(setZeroes(m));
+
+// runtime 77 ms
+// memory 44.7 MB

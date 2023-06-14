@@ -1,0 +1,1 @@
+Create an array to save indices where 0 is found. Run dual for loop over all matrix and populate array (also it can be a Set). Run loop over new array and first populate row with zeroes (row is the first index in array pairs), then run for loop to populate columns. Return matrix.
