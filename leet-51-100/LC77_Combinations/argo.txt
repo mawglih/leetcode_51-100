@@ -1,0 +1,2 @@
+You can use factorial function to find number of permutations using formula. Bit it is optional.
+To build an array with all required arrays we can use recursive function tha accepts starting point and array. Within function check if array.length (tupple) is equal to second number, than add it to output. If not call builder again with added current number into tupple. When for loop reaches end in builder, return output.

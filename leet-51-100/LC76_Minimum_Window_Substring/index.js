@@ -60,3 +60,6 @@ var minWindow = function(s, t) {
 };
 
 console.log(minWindow('abcdasdda', 'adca'));
+
+// runtime 86 ms
+// memory 43 MB

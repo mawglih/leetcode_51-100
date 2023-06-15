@@ -19,5 +19,29 @@ Explanation: There is 1 choose 1 = 1 total combination.
  * @return {number[][]}
  */
 var combine = function(n, k) {
-    
+    const factorial = x => {
+        if(x <= 1) return 1;
+        return x * factorial(x - 1);
+    }
+    let P = factorial(n) / (factorial(n - k) * factorial(k));
+    let output = [];
+    const builder = (start = 1, tupple = []) => {
+        if(tupple.length === k) {
+            output.push(Array.from(tupple));
+        } else {
+            for(let i = start; i <= n; i++) {
+                tupple.push(i);
+                builder(i + 1, tupple);
+                tupple.pop();
+            }
+        }
+
+    }
+    builder();
+    return output;
 };
+
+console.log(combine(4, 2))
+
+// runtime 103 ms
+// memory 46.3 MB
