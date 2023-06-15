@@ -30,5 +30,11 @@ It does not matter what you leave beyond the returned k (hence they are undersco
  * @return {number}
  */
 var removeDuplicates = function(nums) {
-    
+    for(let i = nums.length - 1; i >=0; i--) {
+        let check = nums[i - 2];
+        if(check === nums[i]) nums.splice(i, 1);
+    }
 };
+
+console.log(removeDuplicates([0,0,1,1,1,1,2,3,3]));
+

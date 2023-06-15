@@ -1,0 +1,1 @@
+Start from the last number. Compare it with i - 2 number (if exist) - since we are allowed to have 2 duplicates and array is sorted. Remove nums[i] if nums[i - 2] is the same. Reduce i and continue to 0. Do not return, since modify in place is requested.
