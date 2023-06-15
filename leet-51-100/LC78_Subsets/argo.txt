@@ -1,0 +1,4 @@
+Create output array with empty array inside - in any case it will be included. I the first for loop initialize current - pointing to a number. In the second for loop take a slice from output at index j and add current.
+Finish building array and return it.
+
+In recursive solution, use builder function to build arrays by pushing into helper array members of nums array, using for loop to move along it.
