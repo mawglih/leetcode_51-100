@@ -1,0 +1,1 @@
+Locate first letter of the word in the array. If not found - return false. If it is found, use a helper function to check for next letter comparison - above, below, to the left and to the right. If reached the end of word return true, in any time if helper returns false - return false.
