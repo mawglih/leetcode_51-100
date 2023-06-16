@@ -1,0 +1,1 @@
+create a temp variable to hold list. iterate while head is nit null. when find dups assign next to next.next. Return head.
