@@ -1,0 +1,1 @@
+Create a temp list node to keep track. Start movine from head. If next value is the same as current value - skip node head = head.next. When list is exhausted - return temp.next with saved list nodes.
