@@ -1,0 +1,1 @@
+Appropach is to divide array in half untill array member at mid point is equal target. Check every time where to move the window - increase left to mid + 1, or decrease left to mid - 1.
