@@ -1,0 +1,2 @@
+Create a stack and initialize area. In the for loop add to stack position and value in heights array, if stack is not empty compare the last element heigth in stack with current heights[i], if it is biggerthen pop it and check if the area is bighger with it.
+Return area at the end of the loop.
