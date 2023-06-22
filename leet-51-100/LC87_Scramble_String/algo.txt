@@ -1,0 +1,5 @@
+First solution - exceeds time
+create helper to check if words are equal, if not - return false. Create memoized version of isScrambled. If words pass the checks create a for loop, where check the slices for each iteration. If they return true, then whole function returns trues. Otherwise false.
+
+Second solution. 
+Create an object and check all border solutions. Create a for loop abd check slices for each iteration. If slices return true, then function returns true. Otherwise - false.

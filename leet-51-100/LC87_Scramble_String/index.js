@@ -34,6 +34,72 @@ Output: true
  * @param {string} s2
  * @return {boolean}
  */
-var isScramble = function(s1, s2) {
-    
+var isScramble = function (s1, s2) {
+    const isEqualChars = (word1, word2) => {
+        if(word1.length !== word2.length) return false;
+        const charMap = {};
+        for(let i = 0; i < word1.length; i++) {
+            const char1 = word1[i];
+            const char2 = word2[i];
+            charMap[char1] = char1 in charMap ? charMap[char1] + 1 : 1;
+            charMap[char2] = char2 in charMap ? charMap[char2] - 1 : -1;
+        }
+        for(const char in charMap) {
+            if(charMap[char] !== 0) return false;
+        }
+        return true;        
+    };
+        
+    const isScrambleMemo = (str1, str2, memo = {}) => {
+        const key = `${str1}-${str2}`;
+        if(key in memo) return memo[key];
+        if(str1 === str2) return true;
+        if(!isEqualChars(str1, str2)) {
+            memo[key] = false;
+            return false;
+        }
+        const len = str1.length;
+        for(let i = 1; i < len; i++) {
+            if ((isScramble(str1.slice(0, i), str2.slice(0, i), memo) && isScramble(str1.slice(i), str2.slice(i), memo)) || (isScramble(str1.slice(0, i), str2.slice(len - i), memo) && isScramble(str1.slice(i), str2.slice(0, len - i), memo))) {
+                memo[key] = true;
+                return true;
+            } 
+        }
+        memo[key] = false;
+        return false;
+    };
+return isScrambleMemo(s1,s2,{});
+}
+
+
+console.log(isScramble('word', 'dwor'));
+
+// runtime time exceeded
+
+var isScramble2 = function(s1, s2) {
+    return isScrambleMemo(s1, s2, {})
 };
+
+var isScrambleMemo = function(s1, s2, memo) {
+    if (memo[s1 + s2] != undefined || memo[s2 + s1] != undefined) {
+        return memo[s1 + s2];
+    } else if (s1 == s2) {
+        return true;
+    } else if (s1.length != s2.length) {
+        return false;
+    } else if (s1.length <= 1) {
+        return s1 == s2;
+    }
+    for (let i = 1; i < s1.length; i++) {
+        if ((isScrambleMemo(s1.slice(0, i), s2.slice(0, i), memo) && isScrambleMemo(s1.slice(i), s2.slice(i), memo)) ||
+            (isScrambleMemo(s1.slice(0, i), s2.slice(s1.length - i), memo) && isScrambleMemo(s1.slice(i), s2.slice(0, s1.length - i), memo))) {
+            memo[s1 + s2] = true;
+            return true;
+        }
+    }
+    memo[s1 + s2] = false;
+    return false;
+};
+
+// runtime 178 ms
+// memory 52.2 MB
