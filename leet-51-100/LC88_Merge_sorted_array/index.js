@@ -29,5 +29,21 @@ Note that because m = 0, there are no elements in nums1. The 0 is only there to 
  * @return {void} Do not return anything, modify nums1 in-place instead.
  */
 var merge = function(nums1, m, nums2, n) {
-    
+    let lastNums1 = m - 1;
+    let lastNums2 = n - 1;
+    let lastMerged = m + n - 1;
+    while(lastNums2 >= 0) {
+        if(lastNums1 >= 0 && nums1[lastNums1] > nums2[lastNums2]) nums1[lastMerged--] = nums1[lastNums1--];
+        else nums1[lastMerged--] = nums2[lastNums2--];
+    }
+    return nums1;
 };
+
+const nums1 = [0]; 
+let m = 0; 
+const nums2 = [1]; 
+let n = 1;
+
+console.log(merge(nums1, m, nums2, n));
+ // runtime 56 ms
+ // memory 42 MB

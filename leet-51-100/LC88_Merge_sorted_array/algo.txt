@@ -1,0 +1,1 @@
+Set last index for 1, second and joined array (optional). Set while loop unless current index in second array is below 0. Compare from end elements of array 1 and 2. If element from 1 is bigger - assign to current index of lastMerged element from array1, if not - from array 2. Decrease last index by one everytime.
