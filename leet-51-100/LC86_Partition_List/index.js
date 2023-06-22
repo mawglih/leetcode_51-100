@@ -23,5 +23,24 @@ Output: [1,2]
  * @return {ListNode}
  */
 var partition = function(head, x) {
-    
+    let smallHead = new ListNode(0, null);
+    let smallTail = smallHead;
+    let bigHead = new ListNode(0, null);
+    let bigTail = bigHead;
+    while(head) {
+        if(head.val <= x) {
+            smallTail.next = head;
+            smallTail = smallTail.next;
+        } else {
+            bigTail.next = head;
+            bigTail = bigTail.next;
+        };
+        head = head.next;
+    }
+    bigTail.next = null;
+    smallTail.next =bigHead.next;
+    return smallHead.next;
 };
+
+//runtime 64 ms
+//memory 44.3 MB

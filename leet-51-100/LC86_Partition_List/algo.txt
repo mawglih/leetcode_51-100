@@ -1,0 +1,2 @@
+Create two helper Lists. Start moving from head to the end of original list in while loop. If value is smaller than x assign to smaller List, if equal or bigger - to bigger list. After primary list is exhausted, combine two lists by pointing tail of bigger to null and tal of smaller to big List next.
+Return smallHead.next
