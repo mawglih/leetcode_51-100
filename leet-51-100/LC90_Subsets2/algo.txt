@@ -1,0 +1,3 @@
+Create helper function. First add previous result to output.
+If previous member was not the same then push to list and call helper with updated index.
+Return output

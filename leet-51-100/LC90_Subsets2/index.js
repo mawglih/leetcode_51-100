@@ -15,5 +15,25 @@ Output: [[],[0]]
  * @return {number[][]}
  */
 var subsetsWithDup = function(nums) {
-    
+    nums.sort();
+    let output = [];
+    backtracking(0, [], nums, output);
+    return output;
 };
+
+function backtracking(index, list, nums, output) {
+    if(index > nums.length) return;
+    output.push([...list]);
+    for(let i = index; i < nums.length; i++) {
+        if(i > index && nums[i] === nums[i - 1]) continue
+        list.push(nums[i]);
+        backtracking(i+1, list, nums, output);
+        list.pop();
+    }
+    return output;
+}
+
+console.log(subsetsWithDup([1,2,2,3]));
+
+// runtime 70 ms
+// memory 44.5 MB
