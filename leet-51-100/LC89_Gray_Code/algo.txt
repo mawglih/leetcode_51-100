@@ -1,0 +1,1 @@
+Create an array. Create a loop to push from i to i * 2. every member is equal i ^ (i/2). Return array.

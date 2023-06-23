@@ -31,6 +31,15 @@ Output: [0,1]
  * @param {number} n
  * @return {number[]}
  */
-var grayCode = function(n) {
-    
+
+
+var grayCode = function (n) {
+    let arr = [];
+    for (let i = 0; i < 2 ** n; i++) {
+        arr.push(i ^ (i / 2));
+    }
+    return arr;
 };
+
+// runtime 99 ms
+// Memory 52.4 MB
