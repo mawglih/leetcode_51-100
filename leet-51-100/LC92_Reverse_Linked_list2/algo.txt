@@ -1,0 +1,1 @@
+Two step - read all list nodes into array. Slice array and revert the needed piece and concatenate array, using reduceRigth convert array into list.
