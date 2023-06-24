@@ -1,0 +1,3 @@
+First check the string length. If it is less than 4 or bigger than 12 - return empty array.
+Set recursive backtrack function. If substring supplied is 4 digits, then simply join it with dots and check if it is equal in length the string plus 3. If yes - return it inside output array.
+set a for loop with i equal start - supplied to the function. Get a slice and then compare it after parseInt with 255. If it is check if it does not have a leading zero and is longer than 1. If it does - skip to next iteration. otherwise call backtrack with updated start (i+1) and updated substr array.

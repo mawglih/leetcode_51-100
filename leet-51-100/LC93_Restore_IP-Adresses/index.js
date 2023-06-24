@@ -19,5 +19,28 @@ Output: ["1.0.10.23","1.0.102.3","10.1.0.23","10.10.2.3","101.0.2.3"]
  * @return {string[]}
  */
 var restoreIpAddresses = function(s) {
-    
+    if(s.length < 4 || s.length > 12) return [];
+    let output = [];
+    const backtrack = (start, substr) => {
+        if(substr.length === 4) {
+            let adrr = substr.join('.');
+            if(adrr.length === s.length + 3) return output.push(adrr);
+        }
+        for(let i = start; i < s.length; i++) {
+            let temp = s.substring(start, i + 1);
+            if(parseInt(temp) <= 255) {
+                if(temp[0] == 0 && temp.length >= 2) continue;
+                backtrack(i + 1, [...substr, temp]);
+            }
+        }
+    }
+    backtrack(0, []);
+    return output;
 };
+
+const s = "25525511135";
+console.log(restoreIpAddresses(s));
+
+
+// runtime 72 ms
+// memory 45.6 MB
