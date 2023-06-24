@@ -27,5 +27,16 @@ Output: [1]
  * @return {number[]}
  */
 var inorderTraversal = function(root) {
-    
+    let res = [];
+    const fn = (node) => {
+        if (!node) return;
+        fn(node.left);  
+        res.push(node.val);
+        fn(node.right);
+    }
+    fn(root);
+    return res;
 };
+
+// runtime 59ms
+//  memory 42 MB

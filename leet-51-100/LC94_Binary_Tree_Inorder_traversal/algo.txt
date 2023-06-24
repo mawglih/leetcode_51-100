@@ -1,0 +1,1 @@
+Create helper function. If no  node left - it will return. Start from node. left. When all node.left is gone push node.right. Return array.
