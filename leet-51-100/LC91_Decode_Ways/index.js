@@ -29,6 +29,26 @@ Explanation: "06" cannot be mapped to "F" because of the leading zero ("6" is di
  * @param {string} s
  * @return {number}
  */
-var numDecodings = function(s) {
+ var numDecodings = function(s) {
+    if (s[0] === '0' || s.length === 0) return 0;
+    let temp2 = 1
+    let temp1 = 1
+    for (let i = 1; i < s.length; i++) {
+      let current = 0;
+      if (s[i] !== '0') current = temp1
+      let twoDigit = parseInt(s.slice(i - 1, i + 1))
+      if (twoDigit >= 10 && twoDigit <= 26) {
+          current += temp2;
+      }
+  
+      temp2 = temp1;
+      temp1 = current;
+    }
     
-};
+    return temp1
+  };
+
+  console.log(numDecodings('1123'));
+
+//   runtime 60 ms
+//   memory 41.8 MB
