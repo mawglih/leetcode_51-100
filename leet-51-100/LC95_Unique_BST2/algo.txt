@@ -1,0 +1,1 @@
+Create recursive function with left, right, total number of nodes and array. Run 2 for loops for left and for right.

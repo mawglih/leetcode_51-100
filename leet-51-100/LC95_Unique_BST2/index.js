@@ -23,5 +23,16 @@ Output: [[1]]
  * @return {TreeNode[]}
  */
 var generateTrees = function(n) {
-    
-};
+    const res = [];
+    var generateTreesRec = function(n, l, r, res = []) {
+        for(let i = l; i <= r; i++){
+            for(const left of generateTreesRec(n, l, i - 1)){
+                for(const right of generateTreesRec(n, i + 1, r)){
+                    res.push({val: i, left, right});
+                }
+            }
+        }
+        return n ? res.length ? res : [null] : [];
+    };
+    return generateTreesRec(n, 1, r = n,[])
+}
