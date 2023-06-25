@@ -14,6 +14,20 @@ Output: 1
  * @param {number} n
  * @return {number}
  */
-var numTrees = function(n) {
-    
-};
+const numTrees = (n) => {
+    let memo = {};
+    if(n < 2) return 1;
+    const index = `${n}`;
+    if(memo.hasOwnProperty(index)) return memo(index);        
+    let results = 0;
+    for(let i = 1; i <= n; i++) {
+        results += numTrees(i - 1) * numTrees(n - i);
+    }
+    return results;     
+}
+
+console.log(numTrees(3));
+ 
+
+//runtime 9728 ms
+// memory 48,8 MB
