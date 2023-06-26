@@ -23,7 +23,6 @@ Example 3:
 Input: s1 = "", s2 = "", s3 = ""
 Output: true
  */
-
 /**
  * @param {string} s1
  * @param {string} s2
@@ -31,5 +30,32 @@ Output: true
  * @return {boolean}
  */
 var isInterleave = function(s1, s2, s3) {
+    const isInterleaveHelper = (str1, str2, str3, map) => {
+        if (str1.length === 0 && str2.length === 0 && str3.length === 0) {
+            return true;
+        }
+        if (map[str1 + '#' + str2] === true) {
+            return false;
+        }
+        if (str1.length > 0 && str1.charAt(0) === str3.charAt(0)) {
+            if (isInterleaveHelper(str1.substring(1), str2, str3.substring(1), map)) {
+                return true;
+            }
+        }
+        if (str2.length > 0 && str2.charAt(0) === str3.charAt(0)) {
+            if (isInterleaveHelper(str1, str2.substring(1), str3.substring(1), map)) {
+                return true;
+            }
+        }
+        map[str1 + '#' + str2] = true;
+        return false;
+    };
     
+    return isInterleaveHelper(s1, s2, s3, map = {});    
 };
+
+const s1 = "", s2 = "", s3 = "";
+console.log(isInterleave(s1,s2,s3));
+
+//runtime 85 ms
+//memory 45.7 MB

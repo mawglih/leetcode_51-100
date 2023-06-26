@@ -1,0 +1,1 @@
+Create recursive helper that will take one char at a time. If char in str1 and 3 same, continue with same strings, if in str2 and 3 - with those 2. If found mismatch save it in cache object. When get to the end if object contains saved key - value paurs return false.
