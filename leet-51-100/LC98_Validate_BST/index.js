@@ -18,5 +18,15 @@ Both the left and right subtrees must also be binary.
  * @return {boolean}
  */
 var isValidBST = function(root) {
-    
-};
+    const isValidBSTHelper = (root, min, max) => {
+        if(root === null)
+            return true;
+        if(root.val <= min || root.val >= max)
+            return false;
+        return isValidBSTHelper(root.right, root.val, max) && isValidBSTHelper(root.left, min, root.val)
+    };
+    return isValidBSTHelper(root, -Infinity, Infinity);
+}
+
+// runtime 75 ms
+// memory 46,2 MB

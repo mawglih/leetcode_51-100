@@ -1,0 +1,1 @@
+Check if it is valid using definition of tree. Recursively check left and right sides of the tree. Return result.
