@@ -25,5 +25,26 @@ Explanation: 2 cannot be in the right subtree of 3 because 2 < 3. Swapping 2 and
  * @return {void} Do not return anything, modify root in-place instead.
  */
 var recoverTree = function(root) {
+    let first = null;
+    let last = null;
+    let prev = null;
     
+    const dfs = (node) => {
+        if (!node) return;
+        
+        dfs (node.left);
+        if (prev && node.val < prev.val){
+            if (first === null) first = prev;
+            last = node;
+        }
+        prev = node;
+        dfs (node.right);
+    }
+    
+    dfs(root, null)
+    let temp = first.val;
+    first.val = last.val;
+    last.val = temp
+  
+    return root;
 };
